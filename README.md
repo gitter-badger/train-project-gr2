@@ -8,7 +8,7 @@ A project in M326 and M226 from OOA to OOD and finally to OOP
 
 ? Klassendiagram - Styger, Loser
 
-- [x] Sequencediagram (3.2.4) - Endres
+- [ ] Sequencediagram (3.2.4) - Endres
 - [ ] Implementation (3.4.1) - Styger
 - [x] Featurespecification (3.2.1) - Oberholzer
 - [ ] Documentation - JAVADoc (3.5.1) - Styger

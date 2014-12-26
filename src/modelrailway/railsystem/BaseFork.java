@@ -13,30 +13,32 @@ public class BaseFork extends BaseRail {
 	private String type;
 	protected double radius;
 	protected double angle;
-	private double length;
-	private String connectionB;
-	private String connectionC;
+	private BaseRail connectionB;
+	private BaseRail connectionC;
 	
-	public BaseFork(String type, String connectionB, String connectionC) {
+	public BaseFork(String type, BaseRail connectionA, BaseRail connectionB, BaseRail connectionC) {
+		super(15.5, connectionA);
+		
 		this.currentDirection = "A-B";
 		// this.possibleDirections.
 		this.type = type;
 		this.radius = 31.5;
 		this.angle = 30.0;
-		this.length = 15.5;
 
 		this.connectionB = connectionB;
 		this.connectionC = connectionC;
 	}
 	
 	public BaseFork(Map possibleDirections, String type, double radius, double angle, double length, 
-			String connectionB, String connectionC) {
+			BaseRail connectionA, BaseRail connectionB, BaseRail connectionC) {
+		
+		super(length,connectionA);
+		
 		this.currentDirection = "A-B";
-		// this.possibleDirections = possibleDirections;
+		// TODO: this.possibleDirections = possibleDirections;
 		this.type = type;
 		this.radius = radius;
 		this.angle = angle;
-		this.length = length;
 		this.connectionB = connectionB;
 		this.connectionC = connectionC;
 	}

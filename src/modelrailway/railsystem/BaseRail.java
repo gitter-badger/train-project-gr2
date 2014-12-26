@@ -27,7 +27,7 @@ public abstract class BaseRail extends BaseObject {
 	 * the actual length of the rail
 	 * the length is in cm
 	 */
-	private double length;
+	protected double length;
 	
 	public BaseRail(double length,BaseRail connectionA) {
 		super();
@@ -38,7 +38,7 @@ public abstract class BaseRail extends BaseObject {
 	/**
 	 * @return the trailType
 	 */
-	public String getTrailType() {
+	 public String getTrailType() {
 		return trailType;
 	}
 

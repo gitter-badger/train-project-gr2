@@ -21,13 +21,6 @@ public class Train extends BaseObject {
 	private List<Wagon> wagons;
 
 	/**
-	 * Empty constructor, a locomotive is generated automatically
-	 */
-	public Train() {
-		super();
-	}
-	
-	/**
 	 * Constructor for the most primitive example of a train with just 1 locomotive an 0 wagons.
 	 * @param locomotive, this locomotive will be added to this train
 	 */

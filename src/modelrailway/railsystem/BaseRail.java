@@ -29,7 +29,7 @@ public abstract class BaseRail extends BaseObject {
 	 */
 	protected double length;
 	
-	public BaseRail(double length,BaseRail connectionA) {
+	public BaseRail(double length, BaseRail connectionA) {
 		super();
 		this.setConnectionA(connectionA);
 		this.setLength(length);

@@ -9,21 +9,21 @@ package modelrailway.railsystem;
 public class CurveRail extends BaseRail {
 	private double angle;
 	private double radius;
-	private String connectionB;
+	private BaseRail connectionB;
 	
-	public CurveRail(double angle, double radius, String connectionA, String connectionB) {
-		super(connectionA);
+	public CurveRail(double angle, double radius, BaseRail connectionA, BaseRail connectionB) {
+		super((radius * 2 * Math.PI) / 360 * angle, connectionA);
 		
 		this.angle = angle;
 		this.radius = radius;
 		this.connectionB = connectionB;
 	}
 	
-	public String getConnectionB() {
+	public BaseRail getConnectionB() {
 		return connectionB;
 	}
 	
-	public void setConnectionB(String connectionB) {
+	public void setConnectionB(BaseRail connectionB) {
 		this.connectionB = connectionB;
 	}
 	

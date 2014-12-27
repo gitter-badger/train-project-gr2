@@ -86,11 +86,11 @@ public class BaseFork extends BaseRail {
 		return getLengthCurve();
 	}
 
-	public String getConnectionB() {
+	public BaseRail getConnectionB() {
 		return connectionB;
 	}
 
-	public String getConnectionC() {
+	public BaseRail getConnectionC() {
 		return connectionC;
 	}	
 }

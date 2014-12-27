@@ -8,19 +8,19 @@ package modelrailway.railsystem;
 
 public class StraightRail extends BaseRail {
 	private double length;
-	private String connectionB;
+	private BaseRail connectionB;
 
-	public StraightRail(double length, String connectionA, String connectionB) {
-		super(connectionA);
+	public StraightRail(double length, BaseRail connectionA, BaseRail connectionB) {
+		super(length, connectionA);
 		this.length = length;
 		this.connectionB = connectionB;
 	}
 	
-	public String getConnectionB() {
+	public BaseRail getConnectionB() {
 		return connectionB;
 	}
 	
-	public void setConnectionB(String connectionB) {
+	public void setConnectionB(BaseRail connectionB) {
 		this.connectionB = connectionB;
 	}
 	

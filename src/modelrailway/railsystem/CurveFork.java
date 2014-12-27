@@ -10,17 +10,17 @@ public class CurveFork extends BaseFork {
 	private double radiusBig;
 	private double angleBig;
 	
-	public CurveFork(String type, String connectionB, String connectionC) {
-		super(type, connectionB, connectionC);
+	public CurveFork(String type, BaseRail connectionA, BaseRail connectionB, BaseRail connectionC) {
+		super(type, connectionA, connectionB, connectionC);
 		
 		this.radiusBig = 35.3;
 		this.angleBig = 30.0;
 	}
 		
-	public CurveFork(String type, String connectionB, String connectionC, double angleSmall, double radiusSmall, 
+	public CurveFork(String type, BaseRail connectionA, BaseRail connectionB, BaseRail connectionC, double angleSmall, double radiusSmall, 
 			double angleBig, double radiusBig)
 	{
-		super(type, connectionB, connectionC);
+		super(type, connectionA, connectionB, connectionC);
 		
 		this.radius = radiusSmall;
 		this.angle = angleSmall;

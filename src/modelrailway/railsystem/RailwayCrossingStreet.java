@@ -128,47 +128,45 @@ public class RailwayCrossingStreet extends StraightRail {
 		this.barriesActive = barriesActive;
 	}
 
-	/**
-	 * @return the trailType
-	 */
-	public String getTrailType() {
-		return trailType;
-	}
-
+	/* Überschreibt die Methoden welche bereits von StraightRail geerbt werden.
+	 * Müssen also nicht neu geschrieben werden.
+	 * 
+	 * 
 	/**
 	 * @param trailType the trailType to set
-	 */
+	 * /
 	public void setTrailType(String trailType) {
 		this.trailType = trailType;
 	}
 
 	/**
 	 * @return the connectionA
-	 */
+	 * /
 	public BaseRail getConnectionA() {
-		return connectionA;
+		return this.connectionA;
 	}
 
 	/**
 	 * @param connectionA the connectionA to set
-	 */
+	 * /
 	public void setConnectionA(BaseRail connectionA) {
 		this.connectionA = connectionA;
 	}
 
 	/**
 	 * @return the connectionB
-	 */
+	 * /
 	public BaseRail getConnectionB() {
 		return connectionB;
 	}
 
 	/**
 	 * @param connectionB the connectionB to set
-	 */
+	 * /
 	public void setConnectionB(BaseRail connectionB) {
 		this.connectionB = connectionB;
 	}
+	*/
 
 	public boolean close(){
 		if(trafficLights){

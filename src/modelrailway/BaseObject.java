@@ -2,6 +2,8 @@ package modelrailway;
 
 import java.util.UUID;
 
+import modelrailway.railsystem.BaseRail;
+
 /**
  * This class is taken as BaseObject, that means each class inherits from this class.
  * 
@@ -25,5 +27,5 @@ public class BaseObject {
 	 */
 	protected String getId() {
 		return this.id;
-	}	
+	}
 }

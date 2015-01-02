@@ -9,7 +9,7 @@ package modelrailway.railsystem;
 public class RailwayCrossingStreet extends StraightRail {
 
 	/**
-	 * it can has trafficLights
+	 * it can have trafficLights
 	 */
 	private boolean trafficLights;
 	
@@ -19,7 +19,7 @@ public class RailwayCrossingStreet extends StraightRail {
 	private boolean trafficLightsActive;
 	
 	/**
-	 * it can has warnSigns;
+	 * it can have warnSigns;
 	 */
 	private boolean warnSigns;
 	
@@ -38,10 +38,8 @@ public class RailwayCrossingStreet extends StraightRail {
 	 */
 	private boolean barriesActive;
 	
-	public RailwayCrossingStreet(BaseRail connectionA, BaseRail connectionB) {
-		super(5.0,connectionA, connectionB);
-		this.setConnectionB(connectionB);
-		
+	public RailwayCrossingStreet() {
+		super(5.0);		
 	}
 	
 	/**

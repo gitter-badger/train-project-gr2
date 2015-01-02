@@ -9,11 +9,13 @@ package modelrailway.railsystem;
 public class StraightRail extends BaseRail {
 	private double length;
 	private BaseRail connectionB;
+	
+	public StraightRail() {
+		super(15.5);
+	}
 
-	public StraightRail(double length, BaseRail connectionA, BaseRail connectionB) {
-		super(length, connectionA);
-		this.length = length;
-		this.connectionB = connectionB;
+	public StraightRail(double length) {
+		super(length);
 	}
 	
 	public BaseRail getConnectionB() {
@@ -26,5 +28,20 @@ public class StraightRail extends BaseRail {
 	
 	public double getLength() {
 		return length;
+	}
+
+	@Override
+	public void connect(BaseRail railToConnect) {
+		if(this.connectionA == null) {
+			this.connectionA = railToConnect;
+		}
+		
+		else if(this.connectionB == null) {
+			this.connectionB  = railToConnect;
+		}
+		
+		else {
+			System.out.println("This rails connections are already used. You cant change these connections");
+		}
 	}
 }

@@ -11,23 +11,40 @@ public class CurveRail extends BaseRail {
 	private double radius;
 	private BaseRail connectionB;
 	
-	public CurveRail(double angle, double radius, BaseRail connectionA, BaseRail connectionB) {
-		super((radius * 2 * Math.PI) / 360 * angle, connectionA);
+	public CurveRail() {
+		super((31.5 * 2 * Math.PI) / 360 * 30.0);
+		
+		this.radius = 31.5;
+		this.angle = 30.0;
+	}
+	
+	public CurveRail(double angle, double radius) {
+		super((radius * 2 * Math.PI) / 360 * angle);
 		
 		this.angle = angle;
 		this.radius = radius;
-		this.connectionB = connectionB;
 	}
 	
 	public BaseRail getConnectionB() {
 		return connectionB;
 	}
 	
-	public void setConnectionB(BaseRail connectionB) {
-		this.connectionB = connectionB;
-	}
-	
 	public double getLength() {		
 		return (radius * 2 * Math.PI) / 360 * angle;
+	}
+
+	@Override
+	public void connect(BaseRail railToConnect) {
+		if(this.connectionA == null) {
+			this.connectionA = railToConnect;
+		}
+		
+		else if(this.connectionB == null) {
+			this.connectionB = railToConnect;
+		}
+		
+		else {
+			System.out.println("This rails connections are already used. You cant change these connections");
+		}
 	}
 }

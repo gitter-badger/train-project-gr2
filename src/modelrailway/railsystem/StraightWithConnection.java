@@ -10,9 +10,13 @@ package modelrailway.railsystem;
  *
  */
 public class StraightWithConnection extends StraightRail {
+	
+	public StraightWithConnection() {
+		super();
+	}
 
-	public StraightWithConnection(double length, BaseRail connectionA, BaseRail connectionB) {
-		super(length, connectionA, connectionB);
+	public StraightWithConnection(double length) {
+		super(length);
 	}
 
 }

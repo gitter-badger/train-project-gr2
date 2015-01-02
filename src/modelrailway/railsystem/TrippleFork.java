@@ -10,10 +10,7 @@ public class TrippleFork extends BaseFork {
 	private BaseRail connectionD;
 	
 
-	public TrippleFork(String type, BaseRail connectionA, BaseRail connectionB, BaseRail connectionC, BaseRail connectionD) {
-		super(type, connectionA, connectionB, connectionC);
-
-		this.connectionD = connectionD;
-		// TODO add new direction to possible Directions
+	public TrippleFork(String type) {
+		super(type);
 	}
 }

@@ -1,5 +1,7 @@
 package modelrailway;
 
+import modelrailway.railsystem.*;
+
 /**
  * This is the main class
  * 
@@ -9,8 +11,6 @@ package modelrailway;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Zug fährt");
 	}
 
 }

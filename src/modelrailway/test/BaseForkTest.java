@@ -1,0 +1,15 @@
+package modelrailway.test;
+
+import static org.junit.Assert.*;
+import modelrailway.railsystem.BaseFork;
+
+import org.junit.Test;
+
+public class BaseForkTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

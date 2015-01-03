@@ -1,6 +1,7 @@
 package modelrailway;
 
 import modelrailway.railsystem.*;
+import modelrailway.vehicles.*;
 
 /**
  * This is the main class
@@ -11,6 +12,7 @@ import modelrailway.railsystem.*;
 public class Main {
 
 	public static void main(String[] args) {
+		
 	}
 
 }

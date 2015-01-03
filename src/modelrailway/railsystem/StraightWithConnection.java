@@ -1,22 +1,32 @@
-/**
- * 
- */
 package modelrailway.railsystem;
 
 
 /**
+ * TODO
  * 
  * @author Remo Doerig
- *
+ * @version 1.0
  */
 public class StraightWithConnection extends StraightRail {
+	private double entryVoltage;
 	
+	/**
+	 * Constructor for a default straight with connection.
+	 */
 	public StraightWithConnection() {
-		super();
+		super(7.75);
+		
+		entryVoltage = 3.5;
 	}
 
-	public StraightWithConnection(double length) {
+	/**
+	 * Constructor for a non-default straight with connection.
+	 * @param length
+	 * @param voltage
+	 */
+	public StraightWithConnection(double length, double voltage) {
 		super(length);
+		
+		entryVoltage = voltage;
 	}
-
 }

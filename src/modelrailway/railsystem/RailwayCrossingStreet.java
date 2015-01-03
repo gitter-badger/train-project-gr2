@@ -37,7 +37,7 @@ public class RailwayCrossingStreet extends StraightRail {
 	 * can only be true when barriers is true
 	 */
 	private boolean barriesActive;
-	
+
 	public RailwayCrossingStreet() {
 		super(5.0);		
 	}

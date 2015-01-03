@@ -1,18 +1,20 @@
-package modelrailway.railsystem;
+package modelrailway.railsystem; 
 
-import java.util.Map;
+import java.util.List;
+import modelrailway.helper.Direction;
 
 /**
- * TODO
- * @author Marco Endres & Simon Styger
+ * This class describes the simplest available fork. One way over a curve and one way straight on.
+ *
+ * @author Marco Endres, Simon Styger
  * @version 1.0
  */
 public class BaseFork extends BaseRail {
-	private Map possibleDirections;
 	private String type;
-	private String currentDirection;
 	private BaseRail connectionB;
 	private BaseRail connectionC;
+	private Direction currentDirection;
+	private List<Direction> possibleDirections;
 	protected double radius;
 	protected double angle;
 	
@@ -23,9 +25,11 @@ public class BaseFork extends BaseRail {
 	public BaseFork(String type) {
 		super(15.5);
 		
-		this.currentDirection = "A-B";
-		// TODO: this.possibleDirections = possibleDirections;
-		this.type = type;
+		this.possibleDirections.add(new Direction("A","B"));
+		this.possibleDirections.add(new Direction("A","C"));
+		this.currentDirection = new Direction("A","B");
+		
+		this.type = type.toLowerCase();
 		this.radius = 31.5;
 		this.angle = 30.0;
 	}
@@ -39,36 +43,61 @@ public class BaseFork extends BaseRail {
 	 */
 	public BaseFork(String type, double radius, double angle, double length) {
 		super(length);
+
+		this.possibleDirections.add(new Direction("A","B"));
+		this.possibleDirections.add(new Direction("A","C"));
+		this.currentDirection = new Direction("A","B");
 		
-		this.currentDirection = "A-B";
-		// TODO: this.possibleDirections = possibleDirections;
-		this.type = type;
+		this.type = type.toLowerCase();
 		this.radius = radius;
 		this.angle = angle;
 	}
 
 	/**
 	 * Returns the way a train will take if he will cross this fork.
-	 * @return TODO
+	 * @return currentDirection
 	 */
-	public String getCurrentDirection() {
+	public Direction getCurrentDirection() {
 		return currentDirection;
 	}
 	
 	/**
 	 * Returns all possible directions on this fork.
-	 * @return TODO
+	 * @return possibleDirections
 	 */
-	public Map getPossibleDirections() {
+	public List<Direction> getPossibleDirections() {
 		return this.possibleDirections;
 	}
 	
 	/**
-	 * Changes the current direction on this fork an changes the way a train will take.
-	 * @param TODO
+	 * 
 	 */
-	public void setDirection(String newDirection) {
-		// TODO: Iterate through possibleDirections and set currentDirection
+	protected void addPossibleDirection(Direction possibleDirection) {
+		this.possibleDirections.add(possibleDirection);
+	}
+	
+	/**
+	 * Changes the current direction on this fork an changes the way a train will take.
+	 * @param newDirection
+	 * @throws Exception 
+	 */
+	public boolean changeDirection(Direction newDirection) throws Exception {
+		for(Direction direction : possibleDirections) {
+			if(direction.getStringified() == newDirection.getStringified()) {
+				this.currentDirection = newDirection;
+				return true;
+			}
+			
+			else if(direction.getStringifiedReverse() == newDirection.getStringified()) {
+				this.currentDirection = newDirection;	
+				return true;			
+			}
+			
+			else {
+				throw new Exception("It's impossible to set this direction, please try another one.");
+			}
+		}
+		throw new Exception("There aren't some possible directions on this fork");
 	}
 
 	/**
@@ -76,7 +105,7 @@ public class BaseFork extends BaseRail {
 	 * @return 'left' or 'right'
 	 */
 	public String getType() {
-		return type;
+		return type.toLowerCase();
 	}
 
 	/**
@@ -97,7 +126,7 @@ public class BaseFork extends BaseRail {
 
 	/**
 	 * Returns the length of the curve of this fork.
-	 * @return TODO
+	 * @return length of curve
 	 */
 	public double getLengthCurve() {		
 		return (radius * 2 * Math.PI) / 360 * angle;
@@ -105,7 +134,7 @@ public class BaseFork extends BaseRail {
 	
 	/**
 	 * Returns the length of the straight part of this fork.
-	 * @return TODO
+	 * @return length of straight part
 	 */
 	public double getLengthStraight() {		
 		return length;
@@ -113,43 +142,61 @@ public class BaseFork extends BaseRail {
 	
 	/**
 	 * Returns the effective length of this fork over the curve or over the straight way.
-	 * @return TODO
+	 * @return effective length
 	 */
+	@Override
 	public double getLength() {
-		if(currentDirection == "A-B" || currentDirection == "B-A") {
+		String direction = currentDirection.getStringified();
+		if(direction == "A>B" || direction == "B>A") {
 			return getLengthStraight();
 		}
 		return getLengthCurve();
 	}
 
 	/**
-	 * Returns the connection at the end of the curve.
+	 * Returns the connection B.
 	 * @return TODO
 	 */
 	public BaseRail getConnectionB() {
 		return connectionB;
 	}
+	
+	/**
+	 * Sets the connection B.
+	 * @param connection
+	 */
+	protected void setConnectionB(BaseRail connectionB) {
+		this.connectionB = connectionB;
+	}
 
 	/**
-	 * Returns the connection at the end of the straight way.
+	 * Returns the connection C.
 	 * @return TODO
 	 */
 	public BaseRail getConnectionC() {
 		return connectionC;
 	}
+	
+	/**
+	 * Sets the connection C.
+	 * @param connection
+	 */
+	protected void setConnectionC(BaseRail connectionC) {
+		this.connectionC = connectionC;
+	}
 
 	@Override
 	public void connect(BaseRail railToConnect) {
 		if(this.connectionA == null) {
-			this.connectionA = railToConnect;
+			this.setConnectionA(railToConnect);
 		}
 		
 		else if(this.connectionB == null) {
-			this.connectionB = railToConnect;
+			this.setConnectionB(railToConnect);
 		}
 		
 		else if(this.connectionC == null) {
-			this.connectionC = railToConnect;
+			this.setConnectionC(railToConnect);
 		}
 		
 		else {

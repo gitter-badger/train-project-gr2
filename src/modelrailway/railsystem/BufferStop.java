@@ -34,13 +34,13 @@ public class BufferStop extends BaseRail {
 	}
 
 	@Override
-	public void connect(BaseRail railToConnect) {
+	public void connect(BaseRail railToConnect) throws Exception {
 		if(this.connectionA == null) {
 			connectionA = railToConnect;
 		}
 		
 		else {
-			System.out.println("This rails connection is already used. You cant change this connection");			
+			throw new Exception("This rails connection is already used. You cant change this connection.");	
 		}
 	}
 }

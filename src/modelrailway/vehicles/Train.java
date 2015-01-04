@@ -1,8 +1,10 @@
 package modelrailway.vehicles;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import modelrailway.BaseObject;
+import modelrailway.railsystem.RailRoad;
 
 /**
  * This class describes a train. A train is a composition of 1 locomotive at least and 0 or more wagons.
@@ -11,13 +13,7 @@ import modelrailway.BaseObject;
  * @version 1.0
  */
 public class Train extends BaseObject {
-	/**
-	 * A list of all locomotives in this train
-	 */
 	private List<Locomotive> locomotives;
-	/**
-	 * A list of all wagons in this train
-	 */
 	private List<Wagon> wagons;
 
 	/**
@@ -26,7 +22,11 @@ public class Train extends BaseObject {
 	 */
 	public Train(Locomotive locomotive) {
 		super();
+		
+		this.locomotives = new ArrayList<Locomotive>();		
 		this.locomotives.add(locomotive);
+		
+		this.wagons = new ArrayList<Wagon>();
 	}
 	
 	/**
@@ -38,7 +38,9 @@ public class Train extends BaseObject {
 	public Train(List<Locomotive> locomotives, List<Wagon> wagons) throws Exception {
 		super();
 		if(!locomotives.isEmpty()) {
+			this.locomotives = new ArrayList<Locomotive>();	
 			this.locomotives = locomotives;		
+			this.wagons = new ArrayList<Wagon>();
 			this.wagons = wagons;
 		}
 		else {
@@ -71,6 +73,18 @@ public class Train extends BaseObject {
 		return this.locomotives;
 	}
 	
+	/**
+	 * This method returns all wagons in this train
+	 * @return List<Wagon>
+	 */
+	public List<Wagon> getWagons() {
+		return this.wagons;
+	}
+		
+	/**
+	 * This method calculates the effective power of all locomotives of this train.
+	 * @return power
+	 */
 	public int getPower() {
 		int power = 0;
 		
@@ -82,16 +96,13 @@ public class Train extends BaseObject {
 	}
 	
 	/**
-	 * This method returns all wagons in this train
-	 * @return List<Wagon>
+	 * Moves this train over the overloaded railroad
+	 * @throws Exception
 	 */
-	public List<Wagon> getWagons() {
-		return this.wagons;
-	}
-	
-	public void move() throws Exception {
+	public int move(RailRoad railRoad) throws Exception {
 		if(getPower() >= this.wagons.size()) {
-			
+			// TODO
+			return 0;
 		}
 		else {
 			throw new Exception("This train can't move because there are to much wagons. You should add a locomotive or remove some wagons");

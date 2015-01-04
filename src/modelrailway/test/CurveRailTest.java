@@ -34,7 +34,7 @@ public class CurveRailTest {
 	}
 	
 	@Test
-	public void testConnect() {
+	public void testConnect() throws Exception {
 		CurveRail curveRail = new CurveRail();
 		 
 		StraightRail straightRail1 = new StraightRail();
@@ -45,5 +45,14 @@ public class CurveRailTest {
 		
 		assertEquals(curveRail.getConnectionA(),straightRail1);
 		assertEquals(curveRail.getConnectionB(),straightRail2);
+		
+		try {
+			curveRail.connect(new StraightRail(7.5));
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			String message = "This forks connections are already used. You can't change these connections.";
+			assertEquals(e.getMessage(), message);
+		}
 	}
 }

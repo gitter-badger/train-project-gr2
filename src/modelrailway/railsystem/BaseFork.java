@@ -148,9 +148,9 @@ public class BaseFork extends BaseRail {
 	public double getLength() {
 		String direction = currentDirection.getStringified();
 		if(direction.equals("A>B") || direction.equals("B>A")) {
-			return getLengthStraight();
+			return getLengthCurve();
 		}
-		return getLengthCurve();
+		return getLengthStraight();
 	}
 
 	/**
@@ -186,7 +186,7 @@ public class BaseFork extends BaseRail {
 	}
 
 	@Override
-	public void connect(BaseRail railToConnect) {
+	public void connect(BaseRail railToConnect) throws Exception {
 		if(this.connectionA == null) {
 			this.setConnectionA(railToConnect);
 		}
@@ -200,7 +200,7 @@ public class BaseFork extends BaseRail {
 		}
 		
 		else {
-			System.out.println("This rails connections are already used. You cant change these connections");
+			throw new Exception("This forks connections are already used. You can't change these connections.");
 		}
 	}
 }

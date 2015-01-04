@@ -12,18 +12,25 @@ public class TrainPart extends BaseObject {
 	private int axes;
 	private String type;
 	
-	TrainPart(String type) {
+	public TrainPart(String type) {
 		super();
 
 		this.axes = 2;
 		this.type = type;
 	}
 	
-	TrainPart(int axes, String type) {
+	public TrainPart(String type, int axes) {
 		super();
-		
+
 		this.axes = axes;
 		this.type = type;
 	}
-	
+
+	public int getAxes() {
+		return axes;
+	}
+
+	public String getType() {
+		return type;
+	}
 }

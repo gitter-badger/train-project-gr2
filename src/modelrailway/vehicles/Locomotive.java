@@ -22,7 +22,13 @@ public class Locomotive extends TrainPart{
 		super(type);	
 		
 		this.power = power;
-	}		
+	}
+	
+	public Locomotive(String type, int power, int axes) {			
+		super(type, axes);	
+		
+		this.power = power;
+	}	
 	
 	public int getPower() {
 		return power;

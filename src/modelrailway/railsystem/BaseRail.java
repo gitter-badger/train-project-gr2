@@ -65,5 +65,5 @@ public abstract class BaseRail extends BaseObject {
 		this.length = length;
 	}
 	
-	public abstract void connect(BaseRail railToConnect);
+	public abstract void connect(BaseRail railToConnect) throws Exception;
 }

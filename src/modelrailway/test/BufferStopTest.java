@@ -23,12 +23,21 @@ public class BufferStopTest {
 	}
 	
 	@Test
-	public void testConnect() {
+	public void testConnect() throws Exception {
 		BufferStop bufferStop = new BufferStop();
 		StraightRail straightRail = new StraightRail();
 		
 		bufferStop.connect(straightRail);
 		assertEquals(bufferStop.getConnectionA().getId(),straightRail.getId());
+		
+		try{
+			bufferStop.connect(new StraightRail());
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			String message = "This rails connection is already used. You cant change this connection.";
+			assertEquals(e.getMessage(), message);
+		}
 	}
 	
 	@Test

@@ -43,7 +43,7 @@ public class CurveRail extends BaseRail {
 	}
 
 	@Override
-	public void connect(BaseRail railToConnect) {
+	public void connect(BaseRail railToConnect) throws Exception {
 		if(this.connectionA == null) {
 			this.connectionA = railToConnect;
 		}
@@ -53,7 +53,7 @@ public class CurveRail extends BaseRail {
 		}
 		
 		else {
-			System.out.println("This rails connections are already used. You cant change these connections");
+			throw new Exception("This forks connections are already used. You can't change these connections.");
 		}
 	}
 }

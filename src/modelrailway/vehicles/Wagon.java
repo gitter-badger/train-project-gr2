@@ -14,7 +14,7 @@ public class Wagon extends TrainPart{
 	 * Constructor for a default wagon.
 	 */
 	public Wagon() {
-		super("person");
+		super("people");
 
 		this.capacity = 50;
 		this.colour = "blue";

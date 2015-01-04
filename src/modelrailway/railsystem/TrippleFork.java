@@ -11,22 +11,42 @@ import modelrailway.helper.Direction;
 public class TrippleFork extends BaseFork {
 	private BaseRail connectionD;
 	
+	/**
+	 * Constructor for a default tripplefork
+	 */
 	public TrippleFork() {
 		super("tripple");
 		
-		addPossibleDirection(new Direction("A","C"));
+		addPossibleDirection(new Direction("A","D"));
+	}
+	
+	/**
+	 * Constructor for a non-default tripplefork
+	 */
+	public TrippleFork(double radius, double angle, double length) {
+		super("tripple", radius, angle, length);
+		
+		addPossibleDirection(new Direction("A","D"));
 	}
 
+	/**
+	 * Returns the baserail connected to point D.
+	 * @return
+	 */
 	public BaseRail getConnectionD() {
 		return connectionD;
 	}
 
+	/**
+	 * Sets a baserail to point D.
+	 * @param connectionD
+	 */
 	public void setConnectionD(BaseRail connectionD) {
 		this.connectionD = connectionD;
-	}	
-	
+	}
+		
 	@Override
-	public void connect(BaseRail railToConnect) {
+	public void connect(BaseRail railToConnect) throws Exception {
 		if(this.getConnectionA() == null) {
 			setConnectionA(railToConnect);
 		}
@@ -44,7 +64,7 @@ public class TrippleFork extends BaseFork {
 		}
 		
 		else {
-			System.out.println("This rails connections are already used. You cant change these connections");
+			throw new Exception("This forks connections are already used. You can't change these connections.");
 		}
 	}
 }

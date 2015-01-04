@@ -14,7 +14,7 @@ import org.junit.Test;
 /**
  * This class tests the functionalities of the class 'BaseFork'.
  * 
- * @author Simon
+ * @author Simon Styger
  * @version 1.0
  */
 public class BaseForkTest {

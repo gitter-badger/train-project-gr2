@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * This class tests the functionalities of the class 'CurveFork'.
  * 
- * @author Simon
+ * @author Simon Styger
  * @version 1.0
  */
 public class CurveForkTest {

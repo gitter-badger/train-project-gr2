@@ -11,7 +11,6 @@ import modelrailway.vehicles.Locomotive;
 import modelrailway.vehicles.Train;
 import modelrailway.vehicles.Wagon;
 
-import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

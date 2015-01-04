@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelrailway.helper.Direction;
-import modelrailway.railsystem.BaseFork;
 import modelrailway.railsystem.StraightRail;
 import modelrailway.railsystem.TrippleFork;
 

@@ -34,8 +34,23 @@ public class CurveForkTest {
 		assertEquals(curveFork.getLengthBig(), 18.4830, 0.0001);
 		assertEquals(curveFork.getLengthSmall(), 16.4933, 0.0001);
 		
-		assertEquals(curveFork.getLengthCurve(), 0.0, 0.1);
-		assertEquals(curveFork.getLengthStraight(), 0.0, 0.1);
+		try {
+			curveFork.getLengthCurve();
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			String message = "This method is not available on this class.";
+			assertEquals(e.getMessage(), message);
+		}
+		
+		try {
+			curveFork.getLengthStraight();
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			String message = "This method is not available on this class.";
+			assertEquals(e.getMessage(), message);
+		}
 	}
 	
 	@Test
@@ -51,7 +66,22 @@ public class CurveForkTest {
 		assertEquals(curveFork.getLengthBig(), 28.6670, 0.0001);
 		assertEquals(curveFork.getLengthSmall(), 25.1327, 0.0001);
 		
-		assertEquals(curveFork.getLengthCurve(), 0.0, 0.1);
-		assertEquals(curveFork.getLengthStraight(), 0.0, 0.1);
+		try {
+			curveFork.getLengthCurve();
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			String message = "This method is not available on this class.";
+			assertEquals(e.getMessage(), message);
+		}
+		
+		try {
+			curveFork.getLengthStraight();
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			String message = "This method is not available on this class.";
+			assertEquals(e.getMessage(), message);
+		}
 	}
 }

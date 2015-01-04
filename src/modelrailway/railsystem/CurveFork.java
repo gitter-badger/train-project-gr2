@@ -94,7 +94,7 @@ public class CurveFork extends BaseFork {
 	 */
 	@Override
 	public double getLengthCurve() throws Exception {
-		throw new Exception("This method is not available on this class");
+		throw new Exception("This method is not available on this class.");
 	}
 	
 	/**
@@ -103,6 +103,6 @@ public class CurveFork extends BaseFork {
 	 */	
 	@Override
 	public double getLengthStraight() throws Exception {
-		throw new Exception("This method is not available on this class");
+		throw new Exception("This method is not available on this class.");
 	}
 }

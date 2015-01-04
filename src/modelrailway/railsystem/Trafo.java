@@ -49,13 +49,15 @@ public class Trafo extends BaseObject {
 	}
 
 	/**
-	 * @return the actual pace out of this trafo.
+	 * Returns the actual pace of this trafo.
+	 * @return pace
 	 */
 	public double getPace() {
 		return pace;
 	}
 
 	/**
+	 * This method changes the pace of this trafo.
 	 * @param pace
 	 */
 	public void setPace(double pace) {
@@ -63,7 +65,8 @@ public class Trafo extends BaseObject {
 	}
 	
 	/**
-	 * @return if there is a shortcircuit on this trafo.
+	 * Returns if there is a shortcircuit on this trafo.
+	 * @return isShortCircuit.
 	 */
 	public boolean getShortCircuit() {
 		return isShortCircuit;
@@ -77,14 +80,16 @@ public class Trafo extends BaseObject {
 	}
 
 	/**
-	 * @return the input voltage at this trafo.
+	 * Returns the input voltage at this trafo.
+	 * @return inputVoltage
 	 */
 	public double getInputVoltage() {
 		return inputVoltage;
 	}
 	
 	/**
-	 * @return the output voltage at this trafo.
+	 * Returns the output voltage at this trafo.
+	 * @return outputVoltage
 	 */
 	public double getOutputVoltage() {
 		return outputVoltage;

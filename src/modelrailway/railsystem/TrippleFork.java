@@ -32,7 +32,7 @@ public class TrippleFork extends BaseFork {
 
 	/**
 	 * Returns the baserail connected to point D.
-	 * @return
+	 * @return connectionD
 	 */
 	public BaseRail getConnectionD() {
 		return connectionD;

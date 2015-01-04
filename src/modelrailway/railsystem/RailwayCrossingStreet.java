@@ -46,34 +46,39 @@ public class RailwayCrossingStreet extends StraightRail {
 	}
 	
 	/**
-	 * @return the trafficLights
+	 * Returns if this railwaycrossing has traffic lights.
+	 * @return trafficLights
 	 */
 	public boolean hasTrafficLights() {
 		return trafficLights;
 	}
 
 	/**
-	 * @return the trafficLightsActive
+	 * Returns if this traffic lights are active.
+	 * @return trafficLightsActive
 	 */
 	public boolean areTrafficLightsActive() {
 		return trafficLightsActive;
 	}
 
-	/**
-	 * @return the warnSigns
+	/** 
+	 * Returns if this railwaycrossing has warn signs.
+	 * @return warnSigns
 	 */
 	public boolean hasWarnSigns() {
 		return warnSigns;
 	}
 
 	/**
-	 * @return the warnSignsActive
+	 * Returns if this warn signs are active.
+	 * @return warnSignsActive
 	 */
 	public boolean areWarnSignsActive() {
 		return warnSignsActive;
 	}
 
 	/**
+	 * Returns if this railwaycrossing has barries.
 	 * @return the barries
 	 */
 	public boolean hasBarries() {
@@ -81,13 +86,17 @@ public class RailwayCrossingStreet extends StraightRail {
 	}
 
 	/**
-	 * @return the barriesActive
+	 * Returns if this barries are active.
+	 * @return barriesActive
 	 */
 	public boolean areBarriesActive() {
 		return barriesActive;
 	}
 
-
+	/**
+	 * Closes this railwaycrossing for cars.
+	 * @return true if it was successfull.
+	 */
 	public boolean close(){
 		if(trafficLights){
 			trafficLightsActive = false;
@@ -101,6 +110,10 @@ public class RailwayCrossingStreet extends StraightRail {
 		return true;
 	}
 	
+	/**
+	 * Opens this railwaycrossing for cars.
+	 * @return
+	 */
 	public boolean open(){
 		if(!trafficLights){
 			trafficLightsActive = true;

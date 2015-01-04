@@ -18,7 +18,7 @@ public class Train extends BaseObject {
 
 	/**
 	 * Constructor for the most primitive example of a train with just 1 locomotive an 0 wagons.
-	 * @param locomotive, this locomotive will be added to this train
+	 * @param locomotive, this locomotive will be added to this train.
 	 */
 	public Train(Locomotive locomotive) {
 		super();
@@ -31,9 +31,9 @@ public class Train extends BaseObject {
 	
 	/**
 	 * Constructor to create a normal train with 1 or more locomotives and 1 or more wagons.
-	 * @param locomotivesm, the list of locomotives which should be added to this train
-	 * @param wagons, the list of wagons which should be added to this train
-	 * @throws Exception if locomotives doesn't contain at least one item
+	 * @param locomotivesm, the list of locomotives which should be added to this train.
+	 * @param wagons, the list of wagons which should be added to this train.
+	 * @throws Exception if locomotives doesn't contain at least one item.
 	 */
 	public Train(List<Locomotive> locomotives, List<Wagon> wagons) throws Exception {
 		super();
@@ -50,23 +50,23 @@ public class Train extends BaseObject {
 	}
 	
 	/**
-	 * This method adds a wagon to this train
-	 * @param wagon, this wagon will be added to this train
+	 * This method adds a wagon to this train.
+	 * @param wagon, this wagon will be added to this train.
 	 */
 	public void addWagon(Wagon wagon) {
 		this.wagons.add(wagon);
 	}
 	
 	/**
-	 * This method adds a locomotive to this train
-	 * @param locomotive, this locomotive will be added to this train
+	 * This method adds a locomotive to this train.
+	 * @param locomotive, this locomotive will be added to this train.
 	 */
 	public void addLocomotive(Locomotive locomotive) {
 		this.locomotives.add(locomotive);
 	}
 	
 	/**
-	 * This method returns all locomotives in this train
+	 * Returns all locomotives in this train.
 	 * @return List<Locomotive>
 	 */
 	public List<Locomotive> getLocomotives() {
@@ -74,7 +74,7 @@ public class Train extends BaseObject {
 	}
 	
 	/**
-	 * This method returns all wagons in this train
+	 * Returns all wagons in this train.
 	 * @return List<Wagon>
 	 */
 	public List<Wagon> getWagons() {
@@ -96,7 +96,7 @@ public class Train extends BaseObject {
 	}
 	
 	/**
-	 * Moves this train over the overloaded railroad
+	 * Moves this train over the overloaded railroad.
 	 * @throws Exception
 	 */
 	public int move(RailRoad railRoad) throws Exception {

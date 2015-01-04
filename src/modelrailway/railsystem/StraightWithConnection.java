@@ -8,9 +8,6 @@ package modelrailway.railsystem;
  * @version 1.0
  */
 public class StraightWithConnection extends StraightRail {
-	/**
-	 * The voltage that enters from the trafo.
-	 */
 	private double entryVoltage;
 	
 	/**
@@ -34,7 +31,8 @@ public class StraightWithConnection extends StraightRail {
 	}
 
 	/**
-	 * @return the voltage that enters at this connection.
+	 * Returns the voltage that enters at this connection.
+	 * @return entryVoltage
 	 */
 	public double getEntryVoltage() {
 		return entryVoltage;

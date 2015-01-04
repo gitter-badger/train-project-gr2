@@ -19,7 +19,7 @@ public class WagonTest {
 		assertEquals(wagon.getAxes(), 2);
 		assertEquals(wagon.getType(), "people");
 		assertEquals(wagon.getCapacity(), 50.0, 0.1);
-		assertEquals(wagon.getColour(), "blue");
+		assertEquals(wagon.getColor(), "blue");
 	}
 
 	@Test
@@ -29,6 +29,6 @@ public class WagonTest {
 		assertEquals(wagon.getAxes(), 2);
 		assertEquals(wagon.getType(), "goods");
 		assertEquals(wagon.getCapacity(), 45.75, 0.01);
-		assertEquals(wagon.getColour(), "brown");
+		assertEquals(wagon.getColor(), "brown");
 	}
 }

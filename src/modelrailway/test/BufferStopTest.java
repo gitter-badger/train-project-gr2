@@ -15,7 +15,7 @@ import org.junit.Test;
 public class BufferStopTest {
 
 	@Test
-	public void testDefaultBufferStop() {
+	public void testDefaultBufferStop() throws Exception {
 		BufferStop bufferStop = new BufferStop();
 
 		assertEquals(bufferStop.getLength(), 2.0, 0.1);
@@ -41,7 +41,7 @@ public class BufferStopTest {
 	}
 	
 	@Test
-	public void testNonDefaultBufferStop() {
+	public void testNonDefaultBufferStop() throws Exception {
 		BufferStop bufferStop = new BufferStop(4.75,"Eisen");
 
 		assertEquals(bufferStop.getLength(), 4.75, 0.1);

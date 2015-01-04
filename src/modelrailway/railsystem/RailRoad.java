@@ -10,27 +10,9 @@ import modelrailway.BaseObject;
  * @version 1.0
  */
 public class RailRoad extends BaseObject {
-	
-	/**
-	 * Length of the Railroad
-	 * summed from all the rails in this railroad.
-	 */
 	private double length;
-	
-	/**
-	 * The starting point of the railroad.
-	 */
 	private BaseRail startPoint;
-	
-	/**
-	 * The end point of the railroad.
-	 */
 	private BaseRail endPoint;
-	
-	/**
-	 * A road can not be passed the forks are set wrong,
-	 * or a train is currently on the railroad.
-	 */
 	private boolean isPassable;
 	
 	/**
@@ -47,29 +29,32 @@ public class RailRoad extends BaseObject {
 	}
 
 	/**
-	 * @return the startPoint.
+	 * Returns the startpoint of this railroad.
+	 * @return startPoint
 	 */
 	public BaseRail getStartPoint() {
 		return startPoint;
 	}
 
 	/**
-	 * @return the endPoint.
+	 * Returns the endpoint of this railroad.
+	 * @return endPoint
 	 */
 	public BaseRail getEndPoint() {
 		return endPoint;
 	}
 
 	/**
-	 * @return if these railroad is passable.
+	 * Returns if this railroad is passable.
+	 * @return isPassable.
 	 */
 	public boolean isPassable() {
 		return isPassable;
 	}
-
 	
 	/**
-	 * @return the length of this railroad.
+	 * Returns the length of this railroad.
+	 * @return length
 	 */
 	public double getLength() {
 		return length;

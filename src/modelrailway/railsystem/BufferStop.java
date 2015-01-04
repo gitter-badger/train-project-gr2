@@ -19,8 +19,8 @@ public class BufferStop extends BaseRail {
 	
 	/**
 	 * Constructor for a non-default buffer stop.
-	 * @param length TODO
-	 * @param type TODO
+	 * @param length
+	 * @param type
 	 */
 	public BufferStop(double length, String type) {
 		super(length);
@@ -29,7 +29,7 @@ public class BufferStop extends BaseRail {
 
 	/**
 	 * Returns the type of this buffer stop.
-	 * @return TODO
+	 * @return type
 	 */
 	public String getType() {
 		return type.toLowerCase();

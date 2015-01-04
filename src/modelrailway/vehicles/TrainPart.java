@@ -3,7 +3,7 @@ package modelrailway.vehicles;
 import modelrailway.BaseObject;
 
 /**
- * This class describes a part of a train that means a locomotive or a wagon
+ * This class describes a part of a train. That means a locomotive or a wagon
  * 
  * @author Simon Styger
  * @version 1.0
@@ -12,6 +12,10 @@ public class TrainPart extends BaseObject {
 	private int axes;
 	private String type;
 	
+	/**
+	 * Constructor for a default train-part.
+	 * @param type
+	 */
 	public TrainPart(String type) {
 		super();
 
@@ -19,6 +23,11 @@ public class TrainPart extends BaseObject {
 		this.type = type;
 	}
 	
+	/**
+	 * Constructor for a non-default train-part.
+	 * @param type
+	 * @param axes
+	 */
 	public TrainPart(String type, int axes) {
 		super();
 
@@ -26,10 +35,18 @@ public class TrainPart extends BaseObject {
 		this.type = type;
 	}
 
+	/**
+	 * Returns the axes of this locomotive or wagon.
+	 * @return axes
+	 */
 	public int getAxes() {
 		return axes;
 	}
 
+	/**
+	 * Returns the type of this locomotive or wagon.
+	 * @return type
+	 */
 	public String getType() {
 		return type;
 	}

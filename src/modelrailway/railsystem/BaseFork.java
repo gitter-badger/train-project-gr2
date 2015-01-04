@@ -127,25 +127,28 @@ public class BaseFork extends BaseRail {
 	/**
 	 * Returns the length of the curve of this fork.
 	 * @return length of curve
+	 * @throws Exception, will no be thrown here but maybe on CurveFork.
 	 */
-	public double getLengthCurve() {		
+	public double getLengthCurve() throws Exception {		
 		return (radius * 2 * Math.PI) / 360 * angle;
 	}
 	
 	/**
 	 * Returns the length of the straight part of this fork.
 	 * @return length of straight part
+	 * @throws Exception, will no be thrown here but maybe on CurveFork.
 	 */
-	public double getLengthStraight() {		
+	public double getLengthStraight() throws Exception {		
 		return length;
 	}
 	
 	/**
 	 * Returns the effective length of this fork over the curve or over the straight way.
 	 * @return effective length
+	 * @throws Exception 
 	 */
 	@Override
-	public double getLength() {
+	public double getLength() throws Exception {
 		String direction = currentDirection.getStringified();
 		if(direction.equals("A>B") || direction.equals("B>A")) {
 			return getLengthCurve();
@@ -154,7 +157,7 @@ public class BaseFork extends BaseRail {
 	}
 
 	/**
-	 * Returns the connection B.
+	 * Returns the baserail connected to point B.
 	 * @return TODO
 	 */
 	public BaseRail getConnectionB() {
@@ -162,7 +165,7 @@ public class BaseFork extends BaseRail {
 	}
 	
 	/**
-	 * Sets the connection B.
+	 * Sets a baserail to point B.
 	 * @param connection
 	 */
 	protected void setConnectionB(BaseRail connectionB) {
@@ -170,7 +173,7 @@ public class BaseFork extends BaseRail {
 	}
 
 	/**
-	 * Returns the connection C.
+	 * Returns the baserail connected to point C.
 	 * @return TODO
 	 */
 	public BaseRail getConnectionC() {
@@ -178,7 +181,7 @@ public class BaseFork extends BaseRail {
 	}
 	
 	/**
-	 * Sets the connection C.
+	 * Sets a baserail to point C.
 	 * @param connection
 	 */
 	protected void setConnectionC(BaseRail connectionC) {

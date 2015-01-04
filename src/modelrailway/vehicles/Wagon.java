@@ -1,14 +1,14 @@
 package modelrailway.vehicles;
 
 /**
- * This class describes the wagon.
+ * This class describes a wagon.
  * 
  * @author Simon Styger
  * @version 1.0
  */
 public class Wagon extends TrainPart{
 	private double capacity;
-	private String colour;
+	private String color;
 	
 	/**
 	 * Constructor for a default wagon.
@@ -17,7 +17,7 @@ public class Wagon extends TrainPart{
 		super("people");
 
 		this.capacity = 50;
-		this.colour = "blue";
+		this.color = "blue";
 	}
 	
 	/**
@@ -26,17 +26,25 @@ public class Wagon extends TrainPart{
 	 * @param capacity
 	 * @param colour
 	 */
-	public Wagon(String type, double capacity, String colour) {
+	public Wagon(String type, double capacity, String color) {
 		super(type);
 		
 		this.capacity = capacity;
-		this.colour = colour;
+		this.color = color;
 	}
 
-	public String getColour() {
-		return colour;
+	/**
+	 * Returns the color of this wagon.
+	 * @return color
+	 */
+	public String getColor() {
+		return color;
 	}
 
+	/**
+	 * Returns the capacity of this wagon.
+	 * @return capacity
+	 */
 	public double getCapacity() {
 		return capacity;
 	}	

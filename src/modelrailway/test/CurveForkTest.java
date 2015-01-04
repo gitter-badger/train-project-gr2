@@ -22,7 +22,7 @@ public class CurveForkTest {
 	}
 
 	@Test
-	public void testDefaultDimensions() {
+	public void testDefaultDimensions() throws Exception {
 		CurveFork curveFork = new CurveFork("left");		
 		
 		assertEquals(curveFork.getAngle(), 30.0, 0.1);
@@ -39,7 +39,7 @@ public class CurveForkTest {
 	}
 	
 	@Test
-	public void testNonDefaultDimension() {
+	public void testNonDefaultDimension() throws Exception {
 		CurveFork curveFork = new CurveFork("left",45.0,32.0,45.0,36.5);
 		
 		assertEquals(curveFork.getAngle(), 45.0, 0.1);

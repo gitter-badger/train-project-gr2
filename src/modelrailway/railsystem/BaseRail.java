@@ -24,7 +24,8 @@ public abstract class BaseRail extends BaseObject {
 	}
 
 	/**
-	 * @return the trailType
+	 * Returns the trailtype of this rail.
+	 * @return trailType
 	 */
 	public String getTrailType() {
 		return trailType;
@@ -38,6 +39,7 @@ public abstract class BaseRail extends BaseObject {
 	}
 
 	/**
+	 * Returns
 	 * @return the connectionA
 	 */
 	public BaseRail getConnectionA() {
@@ -53,8 +55,9 @@ public abstract class BaseRail extends BaseObject {
 
 	/**
 	 * @return the length
+	 * @throws Exception 
 	 */
-	public double getLength() {
+	public double getLength() throws Exception {
 		return length;
 	}
 
@@ -65,5 +68,10 @@ public abstract class BaseRail extends BaseObject {
 		this.length = length;
 	}
 	
+	/**
+	 * Connects another rail to this rail.
+	 * @param railToConnect
+	 * @throws Exception
+	 */
 	public abstract void connect(BaseRail railToConnect) throws Exception;
 }

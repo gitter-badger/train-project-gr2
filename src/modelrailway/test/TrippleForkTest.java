@@ -31,7 +31,7 @@ public class TrippleForkTest {
 	}
 	
 	@Test
-	public void testDefaultDimensionsTrippleFork() {
+	public void testDefaultDimensionsTrippleFork() throws Exception {
 		TrippleFork trippleFork = new TrippleFork();
 		
 		assertEquals(trippleFork.getRadius(), 31.5, 0.1);
@@ -41,7 +41,7 @@ public class TrippleForkTest {
 	}
 	
 	@Test
-	public void testNonDefaultDimensionsTrippleFork() {
+	public void testNonDefaultDimensionsTrippleFork() throws Exception {
 		TrippleFork trippleFork = new TrippleFork(41.5,45.0,50);
 
 		assertEquals(trippleFork.getRadius(), 41.5, 0.1);

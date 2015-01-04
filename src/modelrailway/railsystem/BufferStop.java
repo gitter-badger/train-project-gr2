@@ -5,13 +5,14 @@ package modelrailway.railsystem;
  * @version 1.0
  */
 public class BufferStop extends BaseRail {	
-	private String type = "Holz";
+	private String type;
 
 	/**
 	 * Constructor for a default buffer stop.
 	 */
 	public BufferStop() {
 		super(2.0);
+		this.type = "holz";
 	}
 	
 	/**
@@ -21,7 +22,7 @@ public class BufferStop extends BaseRail {
 	 */
 	public BufferStop(double length, String type) {
 		super(length);
-		this.type = type;
+		this.type = type.toLowerCase();
 	}
 
 	/**
@@ -29,7 +30,7 @@ public class BufferStop extends BaseRail {
 	 * @return TODO
 	 */
 	public String getType() {
-		return type;
+		return type.toLowerCase();
 	}
 
 	@Override

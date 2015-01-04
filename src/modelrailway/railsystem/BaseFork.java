@@ -1,6 +1,8 @@
 package modelrailway.railsystem; 
 
+import java.util.ArrayList;
 import java.util.List;
+
 import modelrailway.helper.Direction;
 
 /**
@@ -24,10 +26,11 @@ public class BaseFork extends BaseRail {
 	 */
 	public BaseFork(String type) {
 		super(15.5);
-		
+
+		this.currentDirection = new Direction("A","B");
+		this.possibleDirections = new ArrayList<Direction>();
 		this.possibleDirections.add(new Direction("A","B"));
 		this.possibleDirections.add(new Direction("A","C"));
-		this.currentDirection = new Direction("A","B");
 		
 		this.type = type.toLowerCase();
 		this.radius = 31.5;
@@ -44,9 +47,10 @@ public class BaseFork extends BaseRail {
 	public BaseFork(String type, double radius, double angle, double length) {
 		super(length);
 
+		this.currentDirection = new Direction("A","B");
+		this.possibleDirections = new ArrayList<Direction>();
 		this.possibleDirections.add(new Direction("A","B"));
 		this.possibleDirections.add(new Direction("A","C"));
-		this.currentDirection = new Direction("A","B");
 		
 		this.type = type.toLowerCase();
 		this.radius = radius;
@@ -83,21 +87,17 @@ public class BaseFork extends BaseRail {
 	 */
 	public boolean changeDirection(Direction newDirection) throws Exception {
 		for(Direction direction : possibleDirections) {
-			if(direction.getStringified() == newDirection.getStringified()) {
+			if(newDirection.getStringified().equals(direction.getStringified())) {
 				this.currentDirection = newDirection;
 				return true;
 			}
 			
-			else if(direction.getStringifiedReverse() == newDirection.getStringified()) {
+			else if(newDirection.getStringified().equals(direction.getStringifiedReverse())) {
 				this.currentDirection = newDirection;	
 				return true;			
 			}
-			
-			else {
-				throw new Exception("It's impossible to set this direction, please try another one.");
-			}
 		}
-		throw new Exception("There aren't some possible directions on this fork");
+		throw new Exception("It's impossible to set this direction, please try another one.");
 	}
 
 	/**
@@ -147,7 +147,7 @@ public class BaseFork extends BaseRail {
 	@Override
 	public double getLength() {
 		String direction = currentDirection.getStringified();
-		if(direction == "A>B" || direction == "B>A") {
+		if(direction.equals("A>B") || direction.equals("B>A")) {
 			return getLengthStraight();
 		}
 		return getLengthCurve();

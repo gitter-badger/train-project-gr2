@@ -48,6 +48,16 @@ public class CurveFork extends BaseFork {
 	}
 	
 	public double getLengthSmall() {
-		return (radius * 2 * Math.PI) / 360 * angle;		
+		return (radius * 2 * Math.PI) / 360 * angle;
+	}
+	
+	@Override
+	public double getLengthCurve() {
+		return 0.0;
+	}
+	
+	@Override
+	public double getLengthStraight() {
+		return 0.0;
 	}
 }

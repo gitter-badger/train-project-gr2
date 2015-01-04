@@ -14,7 +14,7 @@ public class BaseObject {
 	/**
 	 * Constructor for each object in this modelrailway, creates an id for each object.
 	 */
-	protected BaseObject() {
+	public BaseObject() {
 		this.id = UUID.randomUUID().toString();
 	}
 
@@ -22,7 +22,7 @@ public class BaseObject {
 	 * Returns id of this object.
 	 * @return id
 	 */
-	protected String getId() {
+	public String getId() {
 		return this.id;
 	}
 }

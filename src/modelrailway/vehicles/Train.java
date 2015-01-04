@@ -71,11 +71,30 @@ public class Train extends BaseObject {
 		return this.locomotives;
 	}
 	
+	public int getPower() {
+		int power = 0;
+		
+		for(Locomotive locomotive : this.locomotives) {
+			power = power + locomotive.getPower();
+		}
+		
+		return power;
+	}
+	
 	/**
 	 * This method returns all wagons in this train
 	 * @return List<Wagon>
 	 */
 	public List<Wagon> getWagons() {
 		return this.wagons;
+	}
+	
+	public void move() throws Exception {
+		if(getPower() >= this.wagons.size()) {
+			
+		}
+		else {
+			throw new Exception("This train can't move because there are to much wagons. You should add a locomotive or remove some wagons");
+		}
 	}
 }

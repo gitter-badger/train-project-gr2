@@ -29,6 +29,15 @@ public class CurveRail extends BaseRail {
 		return connectionB;
 	}
 	
+	public double getRadius() {		
+		return radius;
+	}
+	
+	public double getAngle() {		
+		return angle;
+	}
+	
+	@Override
 	public double getLength() {		
 		return (radius * 2 * Math.PI) / 360 * angle;
 	}

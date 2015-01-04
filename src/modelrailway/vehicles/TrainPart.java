@@ -9,10 +9,21 @@ import modelrailway.BaseObject;
  * @version 1.0
  */
 public class TrainPart extends BaseObject {
+	private int axes;
+	private String type;
 	
-	TrainPart() {
+	TrainPart(String type) {
 		super();
-		// TODO Auto-generated constructor stub
+
+		this.axes = 2;
+		this.type = type;
+	}
+	
+	TrainPart(int axes, String type) {
+		super();
+		
+		this.axes = axes;
+		this.type = type;
 	}
 	
 }

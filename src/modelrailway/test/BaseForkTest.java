@@ -1,7 +1,6 @@
 package modelrailway.test;
 
 import static org.junit.Assert.*;
-import modelrailway.railsystem.BaseFork;
 
 import org.junit.Test;
 

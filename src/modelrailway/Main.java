@@ -1,10 +1,7 @@
 package modelrailway;
 
-import modelrailway.railsystem.*;
-import modelrailway.vehicles.*;
-
 /**
- * This is the main class
+ * This is the main class. It handles this application.
  * 
  * @author Simon Styger
  * @version 1.0

@@ -13,58 +13,65 @@ public class RailRoad extends BaseObject {
 	
 	/**
 	 * Length of the Railroad
-	 * summed from all the Railparts
+	 * summed from all the rails in this railroad.
 	 */
 	private double length;
 	
 	/**
-	 * The starting Point of the Railroad
+	 * The starting point of the railroad.
 	 */
-	private String startPoint;
+	private BaseRail startPoint;
 	
 	/**
-	 * The end Point of the Railroad
+	 * The end point of the railroad.
 	 */
-	private String endPoint;
+	private BaseRail endPoint;
 	
 	/**
 	 * A road can not be passed the forks are set wrong,
-	 * or a train is currently on the railroad 
+	 * or a train is currently on the railroad.
 	 */
 	private boolean isPassable;
 	
-	public RailRoad(String startPoint,String endPoint) {
+	/**
+	 * Constructor for a new RailRoad.
+	 * @param startPoint
+	 * @param endPoint
+	 */
+	public RailRoad(BaseRail startPoint, BaseRail endPoint) {
 		super();
-		this.setStartPoint(startPoint);
-		this.setEndPoint(endPoint);
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
+		
+		this.length = 0.0;
 	}
 
 	/**
-	 * @return the startPoint
+	 * @return the startPoint.
 	 */
-	public String getStartPoint() {
+	public BaseRail getStartPoint() {
 		return startPoint;
 	}
 
 	/**
-	 * @param startPoint the startPoint to set
+	 * @return the endPoint.
 	 */
-	public void setStartPoint(String startPoint) {
-		this.startPoint = startPoint;
-	}
-
-	/**
-	 * @return the endPoint
-	 */
-	public String getEndPoint() {
+	public BaseRail getEndPoint() {
 		return endPoint;
 	}
 
 	/**
-	 * @param endPoint the endPoint to set
+	 * @return if these railroad is passable.
 	 */
-	public void setEndPoint(String endPoint) {
-		this.endPoint = endPoint;
+	public boolean isPassable() {
+		return isPassable;
 	}
 
+	
+	/**
+	 * @return the length of this railroad.
+	 */
+	public double getLength() {
+		return length;
+	}
 }

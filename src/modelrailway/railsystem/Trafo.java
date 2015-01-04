@@ -19,7 +19,7 @@ public class Trafo extends BaseObject {
 	 */
 	Trafo() {
 		super();
-		
+
 		this.inputVoltage = 240.0;
 		this.outputVoltage = 3.5;
 		
@@ -27,6 +27,12 @@ public class Trafo extends BaseObject {
 		this.setPace(0.0);
 	}
 	
+	/**
+	 * Constructor for a non-default trafo.
+	 * @param inputVoltage
+	 * @param outputVoltage
+	 * @throws Exception
+	 */
 	Trafo(double inputVoltage, double outputVoltage) throws Exception {		
 		this.isShortCircuit = false;
 		this.setPace(0.0);
@@ -35,26 +41,52 @@ public class Trafo extends BaseObject {
 			this.inputVoltage = inputVoltage;
 			this.outputVoltage = outputVoltage;			
 		}
-		else {			
+		else {
 			this.inputVoltage = 240.0;
 			this.outputVoltage = 3.5;			
 			throw new Exception("Outputvoltage can't be bigger than the inputvoltage.");
 		}
 	}
 
+	/**
+	 * @return the actual pace out of this trafo.
+	 */
 	public double getPace() {
 		return pace;
 	}
 
+	/**
+	 * @param pace
+	 */
 	public void setPace(double pace) {
 		this.pace = pace;
 	}
 	
+	/**
+	 * @return if there is a shortcircuit on this trafo.
+	 */
 	public boolean getShortCircuit() {
 		return isShortCircuit;
 	}
 
+	/**
+	 * @param isShortCircuit
+	 */
 	public void setShortCircuit(boolean isShortCircuit) {
 		this.isShortCircuit = isShortCircuit;
-	} 
+	}
+
+	/**
+	 * @return the input voltage at this trafo.
+	 */
+	public double getInputVoltage() {
+		return inputVoltage;
+	}
+	
+	/**
+	 * @return the output voltage at this trafo.
+	 */
+	public double getOutputVoltage() {
+		return outputVoltage;
+	}
 }

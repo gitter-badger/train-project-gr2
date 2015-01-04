@@ -8,7 +8,7 @@ import modelrailway.helper.Direction;
 /**
  * This class describes the simplest available fork. One way over a curve and one way straight on.
  *
- * @author Marco Endres, Simon Styger
+ * @author Marco Endres & Simon Styger
  * @version 1.0
  */
 public class BaseFork extends BaseRail {

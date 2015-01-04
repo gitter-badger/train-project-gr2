@@ -5,6 +5,12 @@ import modelrailway.vehicles.TrainPart;
 
 import org.junit.Test;
 
+/**
+ * This class tests the functionalities of the class 'TrainPart'.
+ * 
+ * @author Simon Styger
+ * @version 1.0
+ */
 public class TrainPartTest {
 	@Test
 	public void testDefaultTrainPart() {

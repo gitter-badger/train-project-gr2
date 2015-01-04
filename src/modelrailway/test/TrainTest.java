@@ -15,6 +15,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+/**
+ * This class tests the functionalities of the class 'Train'.
+ * 
+ * @author Simon Styger
+ * @version 1.0
+ */
 public class TrainTest {
     @Rule
     public ExpectedException thrown= ExpectedException.none();

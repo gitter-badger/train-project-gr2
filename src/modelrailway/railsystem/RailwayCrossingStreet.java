@@ -7,164 +7,86 @@ package modelrailway.railsystem;
  * @version 1.0
  */
 public class RailwayCrossingStreet extends StraightRail {
-
-	/**
-	 * it can have trafficLights
-	 */
 	private boolean trafficLights;
-	
-	/**
-	 * can only be true when trafficLights is true
-	 */
 	private boolean trafficLightsActive;
-	
-	/**
-	 * it can have warnSigns;
-	 */
 	private boolean warnSigns;
-	
-	/**
-	 * can only be true when warnSigns is true
-	 */
 	private boolean warnSignsActive;
-	
-	/**
-	 * it can has barriers
-	 */
 	private boolean barries;
-	
-	/**
-	 * can only be true when barriers is true
-	 */
 	private boolean barriesActive;
 
+	/**
+	 * Constructor for a default railwaycrossingstreet.
+	 */
 	public RailwayCrossingStreet() {
-		super(5.0);		
+		super(5.0);
+		
+		this.barries = true;
+		this.trafficLights = true;
+		this.warnSigns = false;
+		
+		this.barriesActive = false;
+		this.trafficLightsActive = false;
+		this.warnSignsActive = false;
+	}
+	
+	/**
+	 * Constructor for a non-default railwaycrossingstreet.
+	 * @param length
+	 * @param barries
+	 * @param trafficLights
+	 * @param warnSigns
+	 */
+	public RailwayCrossingStreet(double length, boolean barries, boolean trafficLights, boolean warnSigns) {
+		super(length);
+		
+		this.barries = true;
+		this.trafficLights = true;
+		this.warnSigns = false;
+		
 	}
 	
 	/**
 	 * @return the trafficLights
 	 */
-	public boolean isTrafficLights() {
+	public boolean hasTrafficLights() {
 		return trafficLights;
-	}
-
-	/**
-	 * @param trafficLights the trafficLights to set
-	 */
-	public void setTrafficLights(boolean trafficLights) {
-		this.trafficLights = trafficLights;
 	}
 
 	/**
 	 * @return the trafficLightsActive
 	 */
-	public boolean isTrafficLightsActive() {
+	public boolean areTrafficLightsActive() {
 		return trafficLightsActive;
-	}
-
-	/**
-	 * @param trafficLightsActive the trafficLightsActive to set
-	 */
-	public void setTrafficLightsActive(boolean trafficLightsActive) {
-		this.trafficLightsActive = trafficLightsActive;
 	}
 
 	/**
 	 * @return the warnSigns
 	 */
-	public boolean isWarnSigns() {
+	public boolean hasWarnSigns() {
 		return warnSigns;
-	}
-
-	/**
-	 * @param warnSigns the warnSigns to set
-	 */
-	public void setWarnSigns(boolean warnSigns) {
-		this.warnSigns = warnSigns;
 	}
 
 	/**
 	 * @return the warnSignsActive
 	 */
-	public boolean isWarnSignsActive() {
+	public boolean areWarnSignsActive() {
 		return warnSignsActive;
-	}
-
-	/**
-	 * @param warnSignsActive the warnSignsActive to set
-	 */
-	public void setWarnSignsActive(boolean warnSignsActive) {
-		this.warnSignsActive = warnSignsActive;
 	}
 
 	/**
 	 * @return the barries
 	 */
-	public boolean isBarries() {
+	public boolean hasBarries() {
 		return barries;
-	}
-
-	/**
-	 * @param barries the barries to set
-	 */
-	public void setBarries(boolean barries) {
-		this.barries = barries;
 	}
 
 	/**
 	 * @return the barriesActive
 	 */
-	public boolean isBarriesActive() {
+	public boolean areBarriesActive() {
 		return barriesActive;
 	}
 
-	/**
-	 * @param barriesActive the barriesActive to set
-	 */
-	public void setBarriesActive(boolean barriesActive) {
-		this.barriesActive = barriesActive;
-	}
-
-	/* Überschreibt die Methoden welche bereits von StraightRail geerbt werden.
-	 * Müssen also nicht neu geschrieben werden.
-	 * 
-	 * 
-	/**
-	 * @param trailType the trailType to set
-	 * /
-	public void setTrailType(String trailType) {
-		this.trailType = trailType;
-	}
-
-	/**
-	 * @return the connectionA
-	 * /
-	public BaseRail getConnectionA() {
-		return this.connectionA;
-	}
-
-	/**
-	 * @param connectionA the connectionA to set
-	 * /
-	public void setConnectionA(BaseRail connectionA) {
-		this.connectionA = connectionA;
-	}
-
-	/**
-	 * @return the connectionB
-	 * /
-	public BaseRail getConnectionB() {
-		return connectionB;
-	}
-
-	/**
-	 * @param connectionB the connectionB to set
-	 * /
-	public void setConnectionB(BaseRail connectionB) {
-		this.connectionB = connectionB;
-	}
-	*/
 
 	public boolean close(){
 		if(trafficLights){

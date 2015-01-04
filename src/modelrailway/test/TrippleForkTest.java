@@ -1,4 +1,5 @@
 package modelrailway.test;
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -10,7 +11,12 @@ import modelrailway.railsystem.TrippleFork;
 
 import org.junit.Test;
 
-
+/**
+ * This class tests the functionalities of the class 'TrippleFork'.
+ * 
+ * @author Simon Styger
+ * @version 1.0
+ */
 public class TrippleForkTest {
 	@Test
 	public void testDefaultTrippleFork() {

@@ -1,4 +1,5 @@
 package modelrailway.test;
+
 import static org.junit.Assert.*;
 import modelrailway.railsystem.CurveRail;
 import modelrailway.railsystem.StraightRail;

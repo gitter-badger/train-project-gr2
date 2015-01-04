@@ -5,6 +5,12 @@ import modelrailway.vehicles.Locomotive;
 
 import org.junit.Test;
 
+/**
+ * This class tests the functionalities of the class 'Locomotive'.
+ * 
+ * @author Simon Styger
+ * @version 1.0
+ */
 public class LocomotiveTest {
 
 	@Test

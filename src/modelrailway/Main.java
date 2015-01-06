@@ -27,10 +27,16 @@ public class Main {
 			RailRoad railRoad = Main.createRailRoad();
 			Train train = Main.createTrain();
 			for(int i = 0;i < 5;i++) {
+				if(i>0) {
+					Thread.sleep(30000);
+				}
 				train.setOnRailway(railRoad);
 				train.move(railRoad, 'B');
-				Thread.sleep(30000);
+				System.out.println("The train entered at the train station");
+				System.out.println("");
+				System.out.println("");
 			}
+			System.out.println("The train finished his job. He is ready again.");
 		} catch(Exception e) {
 			System.out.println("EXCEPTION " + e.getMessage());
 		}

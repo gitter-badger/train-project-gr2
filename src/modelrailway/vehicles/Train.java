@@ -158,7 +158,7 @@ public class Train extends BaseObject {
 			this.move(nextRailRoad, direction);
 		}
 		else {
-			throw new Exception("This train can't move because there are to much wagons. You should add a locomotive or remove some wagons");
+			throw new Exception("This train can't move because there are to much wagons. You should add a locomotive or remove some wagons.");
 		}
 	}
 }

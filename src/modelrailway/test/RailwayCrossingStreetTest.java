@@ -1,6 +1,7 @@
 package modelrailway.test;
 
 import static org.junit.Assert.*;
+import modelrailway.railsystem.RailwayCrossingStreet;
 
 import org.junit.Test;
 
@@ -13,8 +14,21 @@ import org.junit.Test;
 public class RailwayCrossingStreetTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testClose() {
+		RailwayCrossingStreet street = new RailwayCrossingStreet(5.0,true,true,true);
+		street.close();
+		assertTrue(street.areBarriersActive());
+		assertTrue(street.areTrafficLightsActive());
+		assertTrue(street.areWarnSignsActive());
+	}
+
+	@Test
+	public void testOpen() {
+		RailwayCrossingStreet street = new RailwayCrossingStreet(5.0,true,true,true);
+		street.open();
+		assertFalse(street.areBarriersActive());
+		assertFalse(street.areTrafficLightsActive());
+		assertFalse(street.areWarnSignsActive());
 	}
 
 }

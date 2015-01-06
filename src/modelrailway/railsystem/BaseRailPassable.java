@@ -28,6 +28,10 @@ public abstract class BaseRailPassable extends BaseRail {
 		this.connectionB = connectionB;
 	}
 	
+	/**
+	 * konstruktor
+	 * @param length
+	 */
 	public BaseRailPassable(double length) {
 		super(length);
 	}

@@ -11,8 +11,8 @@ public class RailwayCrossingStreet extends StraightRail {
 	private boolean trafficLightsActive;
 	private boolean warnSigns;
 	private boolean warnSignsActive;
-	private boolean barries;
-	private boolean barriesActive;
+	private boolean barriers;
+	private boolean barriersActive;
 
 	/**
 	 * Constructor for a default railwaycrossingstreet.
@@ -20,11 +20,11 @@ public class RailwayCrossingStreet extends StraightRail {
 	public RailwayCrossingStreet() {
 		super(5.0);
 		
-		this.barries = true;
+		this.barriers = true;
 		this.trafficLights = true;
 		this.warnSigns = false;
 		
-		this.barriesActive = false;
+		this.barriersActive = false;
 		this.trafficLightsActive = false;
 		this.warnSignsActive = false;
 	}
@@ -32,17 +32,16 @@ public class RailwayCrossingStreet extends StraightRail {
 	/**
 	 * Constructor for a non-default railwaycrossingstreet.
 	 * @param length
-	 * @param barries
+	 * @param barriers
 	 * @param trafficLights
 	 * @param warnSigns
 	 */
-	public RailwayCrossingStreet(double length, boolean barries, boolean trafficLights, boolean warnSigns) {
+	public RailwayCrossingStreet(double length, boolean barriers, boolean trafficLights, boolean warnSigns) {
 		super(length);
 		
-		this.barries = true;
-		this.trafficLights = true;
-		this.warnSigns = false;
-		
+		this.barriers = barriers;
+		this.trafficLights = trafficLights;
+		this.warnSigns = warnSigns;
 	}
 	
 	/**
@@ -78,19 +77,19 @@ public class RailwayCrossingStreet extends StraightRail {
 	}
 
 	/**
-	 * Returns if this railwaycrossing has barries.
-	 * @return the barries
+	 * Returns if this railwaycrossing has barriers.
+	 * @return the barriers
 	 */
-	public boolean hasBarries() {
-		return barries;
+	public boolean hasBarriers() {
+		return barriers;
 	}
 
 	/**
-	 * Returns if this barries are active.
-	 * @return barriesActive
+	 * Returns if this barriers are active.
+	 * @return barriersActive
 	 */
-	public boolean areBarriesActive() {
-		return barriesActive;
+	public boolean areBarriersActive() {
+		return barriersActive;
 	}
 
 	/**
@@ -99,13 +98,13 @@ public class RailwayCrossingStreet extends StraightRail {
 	 */
 	public boolean close(){
 		if(trafficLights){
-			trafficLightsActive = false;
+			trafficLightsActive = true;
 		}
 		if(warnSigns){
-			warnSignsActive = false;
+			warnSignsActive = true;
 		}
-		if(barriesActive){
-			barriesActive = false;
+		if(barriers){
+			barriersActive = true;
 		}
 		return true;
 	}
@@ -116,13 +115,13 @@ public class RailwayCrossingStreet extends StraightRail {
 	 */
 	public boolean open(){
 		if(!trafficLights){
-			trafficLightsActive = true;
+			trafficLightsActive = false;
 		}
 		if(!warnSigns){
-			warnSignsActive = true;
+			warnSignsActive = false;
 		}
-		if(!barriesActive){
-			barriesActive = true;
+		if(!barriers){
+			barriersActive = false;
 		}
 		return true;
 	} 

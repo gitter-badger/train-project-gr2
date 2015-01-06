@@ -139,8 +139,19 @@ public class Train extends BaseObject {
 			case 'b':
 				next = startPoint.getConnectionB();
 				if(next instanceof BaseFork) {
-					if(((BaseFork)next).getCurrentDirection().getStringified().contains("C")) {
-						next = ((BaseFork)next).getConnectionC();
+					BaseFork nextFork = (BaseFork)next;
+					if(nextFork.getCurrentDirection().getStringified().contains("C")) {
+						next = nextFork.getConnectionC();
+						if(next == startPoint) {
+							if(nextFork.getCurrentDirection().getStringified().contains("A")) {
+								next = nextFork.getConnectionA();
+								direction = 'A';
+							}
+							else {
+								next = nextFork.getConnectionB();
+								direction = 'B';
+							}
+						}
 					}
 				}
 				if(next.getId().equals(startPoint.getConnectionA().getId())) {

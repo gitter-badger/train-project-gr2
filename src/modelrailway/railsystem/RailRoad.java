@@ -10,10 +10,8 @@ import modelrailway.BaseObject;
  * @version 1.0
  */
 public class RailRoad extends BaseObject {
-	private double length;
 	private BaseRail startPoint;
 	private BaseRail endPoint;
-	private boolean isPassable;
 	
 	/**
 	 * Constructor for a new RailRoad.
@@ -24,8 +22,6 @@ public class RailRoad extends BaseObject {
 		super();
 		this.startPoint = startPoint;
 		this.endPoint = endPoint;
-		
-		this.length = 0.0;
 	}
 
 	/**
@@ -44,19 +40,4 @@ public class RailRoad extends BaseObject {
 		return endPoint;
 	}
 
-	/**
-	 * Returns if this railroad is passable.
-	 * @return isPassable.
-	 */
-	public boolean isPassable() {
-		return isPassable;
-	}
-	
-	/**
-	 * Returns the length of this railroad.
-	 * @return length
-	 */
-	public double getLength() {
-		return length;
-	}
 }

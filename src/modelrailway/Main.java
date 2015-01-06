@@ -29,7 +29,7 @@ public class Main {
 			for(int i = 0;i < 5;i++) {
 				train.setOnRailway(railRoad);
 				train.move(railRoad, 'B');
-				//Thread.sleep(3000000);
+				Thread.sleep(30000);
 			}
 		} catch(Exception e) {
 			System.out.println("EXCEPTION " + e.getMessage());

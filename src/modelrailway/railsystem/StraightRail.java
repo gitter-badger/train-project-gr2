@@ -7,9 +7,8 @@ package modelrailway.railsystem;
  * @version 1.0
  */
 
-public class StraightRail extends BaseRail {
+public class StraightRail extends BaseRailPassable {
 	private double length;
-	private BaseRail connectionB;
 	
 	/**
 	 * Constructor for a default straight rail.
@@ -27,22 +26,6 @@ public class StraightRail extends BaseRail {
 	}
 	
 	/**
-	 * Returns the baserail connected to point B.
-	 * @return
-	 */
-	public BaseRail getConnectionB() {
-		return connectionB;
-	}
-	
-	/**
-	 * Sets a baserail to point D.
-	 * @param connectionB
-	 */
-	public void setConnectionB(BaseRail connectionB) {
-		this.connectionB = connectionB;
-	}
-	
-	/**
 	 * Returns the length of this rail.
 	 * @return length
 	 */
@@ -56,8 +39,8 @@ public class StraightRail extends BaseRail {
 			this.connectionA = railToConnect;
 		}
 		
-		else if(this.connectionB == null) {
-			this.connectionB  = railToConnect;
+		else if(this.getConnectionB() == null) {
+			this.setConnectionB(railToConnect);
 		}
 		
 		else {

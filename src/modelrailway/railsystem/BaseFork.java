@@ -11,9 +11,8 @@ import modelrailway.helper.Direction;
  * @author Marco Endres & Simon Styger
  * @version 1.0
  */
-public class BaseFork extends BaseRail {
+public class BaseFork extends BaseRailPassable {
 	private String type;
-	private BaseRail connectionB;
 	private BaseRail connectionC;
 	private Direction currentDirection;
 	private List<Direction> possibleDirections;
@@ -157,22 +156,6 @@ public class BaseFork extends BaseRail {
 	}
 
 	/**
-	 * Returns the baserail connected to point B.
-	 * @return TODO
-	 */
-	public BaseRail getConnectionB() {
-		return connectionB;
-	}
-	
-	/**
-	 * Sets a baserail to point B.
-	 * @param connection
-	 */
-	protected void setConnectionB(BaseRail connectionB) {
-		this.connectionB = connectionB;
-	}
-
-	/**
 	 * Returns the baserail connected to point C.
 	 * @return TODO
 	 */
@@ -194,7 +177,7 @@ public class BaseFork extends BaseRail {
 			this.setConnectionA(railToConnect);
 		}
 		
-		else if(this.connectionB == null) {
+		else if(this.getConnectionB() == null) {
 			this.setConnectionB(railToConnect);
 		}
 		

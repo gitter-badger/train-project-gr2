@@ -7,10 +7,9 @@ package modelrailway.railsystem;
  * @version 1.0
  */
 
-public class CurveRail extends BaseRail {
+public class CurveRail extends BaseRailPassable {
 	private double angle;
 	private double radius;
-	private BaseRail connectionB;
 	
 	/**
 	 * Constructor for a default curverail.
@@ -32,22 +31,6 @@ public class CurveRail extends BaseRail {
 		
 		this.angle = angle;
 		this.radius = radius;
-	}
-	
-	/**
-	 * Returns the baserail connected to point B.
-	 * @return connectionB
-	 */
-	public BaseRail getConnectionB() {
-		return connectionB;
-	}
-	
-	/**
-	 * Sets a baserail to point B.
-	 * @param connection
-	 */
-	public void setConnectionB(BaseRail connection) {
-		this.connectionB = connection;
 	}
 	
 	/**
@@ -81,8 +64,8 @@ public class CurveRail extends BaseRail {
 			this.connectionA = railToConnect;
 		}
 		
-		else if(this.connectionB == null) {
-			this.connectionB = railToConnect;
+		else if(this.getConnectionB() == null) {
+			this.setConnectionB(railToConnect);
 		}
 		
 		else {

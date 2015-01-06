@@ -12,11 +12,21 @@ public class StraightWithConnection extends StraightRail {
 	
 	/**
 	 * Constructor for a default straight with connection.
+	 * @param Trafo
 	 */
 	public StraightWithConnection() {
 		super(7.75);
 		
 		this.entryVoltage = 3.5;
+	}
+	/**
+	 * Constructor for a default straight from a trafo
+	 * @param Trafo
+	 */
+	public StraightWithConnection(Trafo trafo) {
+		super(7.75);
+		
+		this.entryVoltage = trafo.getOutputVoltage();
 	}
 
 	/**

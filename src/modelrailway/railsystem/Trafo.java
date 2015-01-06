@@ -17,7 +17,7 @@ public class Trafo extends BaseObject {
 	/**
 	 * Constructor for a default trafo.
 	 */
-	Trafo() {
+	public Trafo() {
 		super();
 
 		this.inputVoltage = 240.0;

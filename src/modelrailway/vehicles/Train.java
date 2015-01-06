@@ -5,6 +5,9 @@ import java.util.List;
 
 import modelrailway.BaseObject;
 import modelrailway.railsystem.RailRoad;
+import modelrailway.railsystem.BaseRail;
+import modelrailway.railsystem.BaseRailPassable;
+import modelrailway.railsystem.StraightRail;
 
 /**
  * This class describes a train. A train is a composition of 1 locomotive at least and 0 or more wagons.
@@ -15,6 +18,11 @@ import modelrailway.railsystem.RailRoad;
 public class Train extends BaseObject {
 	private List<Locomotive> locomotives;
 	private List<Wagon> wagons;
+	
+	/**
+	 * to assure the train doesn't move in circles
+	 */
+	private ArrayList<BaseRail> placesSeen = new ArrayList<BaseRail>();
 
 	/**
 	 * Constructor for the most primitive example of a train with just 1 locomotive an 0 wagons.
@@ -99,10 +107,55 @@ public class Train extends BaseObject {
 	 * Moves this train over the overloaded railroad.
 	 * @throws Exception
 	 */
-	public int move(RailRoad railRoad) throws Exception {
+	public void move(RailRoad railRoad,char direction) throws Exception {
 		if(getPower() >= this.wagons.size()) {
-			// TODO
-			return 0;
+			BaseRail next;
+			if(!(railRoad.getStartPoint() instanceof BaseRailPassable)) {
+				throw new Exception("The Rails must be passable, otherwise the train can't move on them");
+			}
+			BaseRailPassable startPoint = (BaseRailPassable)railRoad.getStartPoint();
+			RailRoad nextRailRoad;
+			
+
+			
+			switch(direction) {
+			case 'A':
+			case 'a':
+				next = startPoint.getConnectionA();
+				if(next.getId().equals(startPoint.getConnectionB().getId())) {
+					throw new Exception("Connection A and Connection B are the same");
+				}
+				break;
+			case 'B':
+			case 'b':
+				next = startPoint.getConnectionB();
+				if(next.getId().equals(startPoint.getConnectionA().getId())) {
+					throw new Exception("Connection A and Connection B are the same");
+				}
+				break;
+			default:
+				throw new Exception("direction must be either 'A' or 'B'");
+			}
+			if(placesSeen.contains(next)) {
+				throw new Exception("The Place with ID = " + next.getId() + " has already been visited");
+			}
+			placesSeen.add(next);
+			
+			
+			if(next.getId().equals(startPoint.getId()) && !next.getId().equals(railRoad.getEndPoint().getId())) {
+				throw new Exception("Railroad is incorrect");
+			}
+			System.out.println("Moving train in direction '" + direction + "' to a " + next.getClass().toString() + " with ID = " + next.getId());
+			System.out.println("Length:" + next.getLength());
+			if(startPoint.getId().equals(railRoad.getEndPoint().getId())) {
+				System.out.println("Finished a RailRoad");
+				return;
+			}
+			if(next.getConnectionA().getId().equals(startPoint.getId())) {
+				direction = 'B';
+			}
+			nextRailRoad = new RailRoad(next,railRoad.getEndPoint());
+			this.move(nextRailRoad, direction);
 		}
 		else {
 			throw new Exception("This train can't move because there are to much wagons. You should add a locomotive or remove some wagons");

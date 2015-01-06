@@ -8,6 +8,7 @@ import modelrailway.railsystem.RailRoad;
 import modelrailway.railsystem.BaseRail;
 import modelrailway.railsystem.BaseRailPassable;
 import modelrailway.railsystem.StraightRail;
+import modelrailway.railsystem.BaseFork;
 
 /**
  * This class describes a train. A train is a composition of 1 locomotive at least and 0 or more wagons.
@@ -104,6 +105,14 @@ public class Train extends BaseObject {
 	}
 	
 	/**
+	 * sets the train on a new RailRoad
+	 * @param railRoad
+	 */
+	public void setOnRailway(RailRoad railRoad) {
+		placesSeen = new ArrayList<BaseRail>();
+	}
+	
+	/**
 	 * Moves this train over the overloaded railroad.
 	 * @throws Exception
 	 */
@@ -129,6 +138,11 @@ public class Train extends BaseObject {
 			case 'B':
 			case 'b':
 				next = startPoint.getConnectionB();
+				if(next instanceof BaseFork) {
+					if(((BaseFork)next).getCurrentDirection().getStringified().contains("C")) {
+						next = ((BaseFork)next).getConnectionC();
+					}
+				}
 				if(next.getId().equals(startPoint.getConnectionA().getId())) {
 					throw new Exception("Connection A and Connection B are the same");
 				}

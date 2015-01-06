@@ -26,7 +26,11 @@ public class Main {
 		try {
 			RailRoad railRoad = Main.createRailRoad();
 			Train train = Main.createTrain();
-			train.move(railRoad,'B');
+			for(int i = 0;i < 5;i++) {
+				train.setOnRailway(railRoad);
+				train.move(railRoad, 'B');
+				//Thread.sleep(3000000);
+			}
 		} catch(Exception e) {
 			System.out.println("EXCEPTION " + e.getMessage());
 		}
@@ -146,17 +150,17 @@ public class Main {
 		topStraightRail.connect(rightOuterCurve3);
 		
 		// Right Outer Side
-		rightOuterStraightRail.connect(rightFork);
 		rightOuterStraightRail.connect(rightOuterCurve1);
+		rightOuterStraightRail.connect(rightFork);
 
-		rightOuterCurve1.connect(rightOuterStraightRail);
 		rightOuterCurve1.connect(rightOuterCurve2);
+		rightOuterCurve1.connect(rightOuterStraightRail);
 
-		rightOuterCurve2.connect(rightOuterCurve1);
 		rightOuterCurve2.connect(rightOuterCurve3);
-		
-		rightOuterCurve3.connect(rightOuterCurve2);
+		rightOuterCurve2.connect(rightOuterCurve1);
+
 		rightOuterCurve3.connect(topStraightRail);
+		rightOuterCurve3.connect(rightOuterCurve2);
 		
 		// Right Inner Side
 		rightInnerStraight.connect(rightInnerCurve1);

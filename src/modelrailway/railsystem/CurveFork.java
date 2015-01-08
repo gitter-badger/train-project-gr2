@@ -40,8 +40,11 @@ public class CurveFork extends BaseFork {
 		if(angleSmall > 360 || angleSmall <= 0) {
 			throw new java.lang.RuntimeException("invalid parameter");
 		}
-		if((radiusBig > 50  || radiusBig <= 0) && radiusBig > radiusSmall) {
+		if(radiusBig > 50  || radiusBig <= 0) {
 			throw new java.lang.RuntimeException("invalid parameter");
+		}
+		if(radiusBig <= radiusSmall) {
+			throw new java.lang.RuntimeException("The outter radius has to be bigger then the inner radius.");			
 		}
 		if(angleBig > 360 || angleBig <= 0) {
 			throw new java.lang.RuntimeException("invalid parameter");

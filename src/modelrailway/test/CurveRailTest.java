@@ -56,4 +56,63 @@ public class CurveRailTest {
 			assertEquals(e.getMessage(), message);
 		}
 	}
+	
+
+	@Test
+	public void testUnderMinimum() {
+		try {
+			CurveRail rail = new CurveRail(-25, -15);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals("invalid argument", e.getMessage());
+		}
+		
+	}
+	
+	@Test
+	public void testMinimumValue() {
+		try {
+			CurveRail rail = new CurveRail(0, 0);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals("invalid argument", e.getMessage());
+		}
+		
+	}
+	
+	@Test
+	public void testValidValue() {
+		CurveRail rail = null;
+		try {
+			rail = new CurveRail(30, 35);
+		}
+		finally {
+			assertEquals(rail.getAngle(),30.0,0.1);
+			assertEquals(rail.getRadius(),35.0,0.1);
+		}		
+	}
+	
+	@Test
+	public void testMaximumValue() {
+		try {
+			CurveRail rail = new CurveRail(360, 50);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals(e.getMessage(), "invalid argument");
+		}
+	}
+	
+	@Test
+	public void testOverMaximum() {
+		try {
+			CurveRail rail = new CurveRail(361, 52);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals(e.getMessage(), "invalid argument");
+		}		
+	}	
 }

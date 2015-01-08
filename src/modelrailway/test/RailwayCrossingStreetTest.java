@@ -12,7 +12,6 @@ import org.junit.Test;
  * @version 1.0
  */
 public class RailwayCrossingStreetTest {
-
 	@Test
 	public void testClose() {
 		RailwayCrossingStreet street = new RailwayCrossingStreet(5.0,true,true,true);
@@ -30,5 +29,4 @@ public class RailwayCrossingStreetTest {
 		assertFalse(street.areTrafficLightsActive());
 		assertFalse(street.areWarnSignsActive());
 	}
-
 }

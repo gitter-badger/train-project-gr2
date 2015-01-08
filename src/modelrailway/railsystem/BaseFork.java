@@ -53,10 +53,10 @@ public class BaseFork extends BaseRailPassable {
 		
 		this.type = type.toLowerCase();
 		if(radius > 50 || radius <= 0) {
-			throw new java.lang.RuntimeException("radius is to big");
+			throw new java.lang.RuntimeException("invalid argument");
 		}
 		if(angle > 360 || angle <= 0) {
-			throw new java.lang.RuntimeException("angle is to big");
+			throw new java.lang.RuntimeException("invalid argument");
 		}
 		this.radius = radius;
 		this.angle = angle;

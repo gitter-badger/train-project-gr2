@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import modelrailway.helper.Direction;
 import modelrailway.railsystem.BaseFork;
+import modelrailway.railsystem.CurveRail;
 import modelrailway.railsystem.StraightRail;
 
 /**
@@ -157,4 +158,66 @@ public class BaseForkTest {
 			assertEquals(e.getMessage(), message);
 		}
 	}
+	
+
+	@Test
+	public void testUnderMinimum() {
+		try {
+			BaseFork fork = new BaseFork("left", -25.5, -15.3, -15.5);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals("invalid argument", e.getMessage());
+		}
+		
+	}
+	
+	@Test
+	public void testMinimumValue() {
+		try {
+			BaseFork fork = new BaseFork("left", 0, 0, 0);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals("invalid argument", e.getMessage());
+		}
+		
+	}
+	
+	@Test
+	public void testValidValue() throws Exception {
+		BaseFork fork = null;
+		try {
+			fork = new BaseFork("left", 35.0, 30.0, 45.0);
+		}
+		finally {
+			assertEquals(fork.getAngle(),30.0,0.1);
+			assertEquals(fork.getRadius(),35.0,0.1);
+			assertEquals(fork.getLengthStraight(),45.0,0.1);
+		}		
+	}
+	
+	@Test
+	public void testMaximumValue() throws Exception {
+		BaseFork fork = null;
+		try {
+			fork = new BaseFork("left", 50, 360, 50);
+		}
+		finally {
+			assertEquals(fork.getAngle(),360.0,0.1);
+			assertEquals(fork.getRadius(),50.0,0.1);
+			assertEquals(fork.getLengthStraight(),50.0,0.1);
+		}
+	}
+	
+	@Test
+	public void testOverMaximum() {
+		try {
+			BaseFork fork = new BaseFork("left", 75.3, 365.0, 52.7);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals(e.getMessage(), "invalid argument");
+		}		
+	}	
 }

@@ -1,6 +1,7 @@
 package modelrailway.test;
 
 import static org.junit.Assert.*;
+import modelrailway.railsystem.BaseFork;
 import modelrailway.railsystem.CurveFork;
 
 import org.junit.Test;
@@ -83,5 +84,16 @@ public class CurveForkTest {
 			String message = "This method is not available on this class.";
 			assertEquals(e.getMessage(), message);
 		}
+	}
+
+	@Test
+	public void testAnglesAndRadiusses() {		
+		try {
+			CurveFork curveFork = new CurveFork("left",45.0,32.0,42.0,30.5);
+            fail("Expected an exception to be thrown.");
+		}
+		catch(Exception e) {
+			assertEquals(e.getMessage(), "The outter radius has to be bigger then the inner radius.");
+		}		
 	}
 }

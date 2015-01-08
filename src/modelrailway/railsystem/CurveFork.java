@@ -33,51 +33,32 @@ public class CurveFork extends BaseFork {
 	public CurveFork(String type, double angleSmall, double radiusSmall, double angleBig, double radiusBig)
 	{
 		super(type);
-		
+
+		if(radiusSmall > 50 || radiusSmall <= 0) {
+			throw new java.lang.RuntimeException("invalid parameter");
+		}
+		if(angleSmall > 360 || angleSmall <= 0) {
+			throw new java.lang.RuntimeException("invalid parameter");
+		}
+		if(radiusBig > 50  || radiusBig <= 0) {
+			throw new java.lang.RuntimeException("invalid parameter");
+		}
+		if(angleBig > 360 || angleBig <= 0) {
+			throw new java.lang.RuntimeException("invalid parameter");
+		}
 		this.radius = radiusSmall;
 		this.angle = angleSmall;
 		this.radiusBig = radiusBig;
 		this.angleBig = angleBig;
 	}
 
-	/**
-	 * Returns the radius of the outter curve.
-	 * @return radiusBig
-	 */
-	public double getRadiusBig() {
-		return radiusBig;
-	}
 
-	/**
-	 * Returns the angle of the outter curve.
-	 * @return angleBig
-	 */
-	public double getAngleBig() {
-		return angleBig;
-	}
-	
 	/**
 	 * Returns the lenght of the outter curve.
 	 * @return length
 	 */
 	public double getLengthBig() {
 		return (radiusBig * 2 * Math.PI) / 360 * angleBig;
-	}
-	
-	/**
-	 * Returns the radius of the inner curve.
-	 * @return radius
-	 */
-	public double getRadiusSmall() {
-		return radius;
-	}
-
-	/**
-	 * Returns the angle of the inner curve.
-	 * @return angle
-	 */
-	public double getAngleSmall() {
-		return angle;
 	}
 	
 	/**

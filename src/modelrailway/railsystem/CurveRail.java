@@ -28,6 +28,12 @@ public class CurveRail extends BaseRailPassable {
 	 */
 	public CurveRail(double angle, double radius) {
 		super((radius * 2 * Math.PI) / 360 * angle);
+		if(radius > 50 || radius <= 0) {
+			throw new java.lang.RuntimeException("invalid parameter");
+		}
+		if(angle > 360 || angle <= 0) {
+			throw new java.lang.RuntimeException("invalid parameter");
+		}
 		
 		this.angle = angle;
 		this.radius = radius;

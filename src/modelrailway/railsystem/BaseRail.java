@@ -18,7 +18,7 @@ public abstract class BaseRail extends BaseObject {
 	 * Constructor for BaseRail
 	 * @param length the length of this rail
 	 */
-	public BaseRail(double length) {
+	public BaseRail(double length){
 		super();
 		this.setLength(length);
 	}
@@ -65,6 +65,9 @@ public abstract class BaseRail extends BaseObject {
 	 * @param length the length to set.
 	 */
 	public void setLength(double length) {
+		if(length > 50 || length <= 0) {
+			throw new java.lang.RuntimeException("invalid argument");
+		}
 		this.length = length;
 	}
 	

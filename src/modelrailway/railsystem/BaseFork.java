@@ -43,7 +43,7 @@ public class BaseFork extends BaseRailPassable {
 	 * @param angle defines the angle of the curve of this fork.
 	 * @param length defines the length of the straight part of this fork.
 	 */
-	public BaseFork(String type, double radius, double angle, double length) {
+	public BaseFork(String type, double radius, double angle, double length){
 		super(length);
 
 		this.currentDirection = new Direction("A","B");
@@ -52,6 +52,12 @@ public class BaseFork extends BaseRailPassable {
 		this.possibleDirections.add(new Direction("A","C"));
 		
 		this.type = type.toLowerCase();
+		if(radius > 50 || radius <= 0) {
+			throw new java.lang.RuntimeException("radius is to big");
+		}
+		if(angle > 360 || angle <= 0) {
+			throw new java.lang.RuntimeException("angle is to big");
+		}
 		this.radius = radius;
 		this.angle = angle;
 	}

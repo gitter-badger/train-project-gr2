@@ -8,7 +8,6 @@ package modelrailway.railsystem;
  */
 
 public class StraightRail extends BaseRailPassable {
-	private double length;
 	
 	/**
 	 * Constructor for a default straight rail.

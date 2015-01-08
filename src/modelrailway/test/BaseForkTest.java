@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Test;
+
 import modelrailway.helper.Direction;
 import modelrailway.railsystem.BaseFork;
 import modelrailway.railsystem.StraightRail;
-
-import org.junit.Test;
 
 /**
  * This class tests the functionalities of the class 'BaseFork'.

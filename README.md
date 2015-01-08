@@ -1,4 +1,4 @@
 train-project-gr2
 =================
 
-This is the documentation branch
+This is the gh-pages branch
